@@ -6,9 +6,18 @@ const CustomForm = () => {
   // Due to array destructuring the name doesn't need to match
   // the custom hook. Variables just need to be in the correct
   // position :[value, setValue, handleChanges]
-  const [username, setUsername, handleUsername] = useInput("");
-  const [password, setPassword, handlePassword] = useInput("");
-  const [email, setEmail, handleEmail] = useInput("");
+
+  // const [username, setUsername, handleUsername] = useInput("");
+  // const [password, setPassword, handlePassword] = useInput("");
+  // const [email, setEmail, handleEmail] = useInput("");
+
+  //AFTER updating useInput w/ useLocalStorage you need to add
+  //a unique key for each input
+
+  //useInput(localStorage key name, defaultValue)
+  const [username, setUsername, handleUsername] = useInput("username", "");
+  const [password, setPassword, handlePassword] = useInput("password", "");
+  const [email, setEmail, handleEmail] = useInput("email", "");
 
   //function that resets our inputs after submission
   const resetValues = e => {
